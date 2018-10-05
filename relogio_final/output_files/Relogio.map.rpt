@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Relogio
-Thu Sep 27 18:53:37 2018
+Fri Oct 05 03:16:56 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -13,9 +13,9 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |Relogio|SM:maqEstados|fstate
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
+  8. State Machine - |Relogio|SMUC:SMUC1|fstate
+  9. State Machine - |Relogio|SM:maqEstados|fstate
+ 10. Registers Removed During Synthesis
  11. General Register Statistics
  12. Inverted Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
@@ -25,13 +25,13 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
  17. Parameter Settings for User Entity Instance: fluxoDados:FD|registradorGenerico:registradorD
  18. Parameter Settings for User Entity Instance: fluxoDados:FD|registradorGenerico:registradorE
  19. Parameter Settings for User Entity Instance: fluxoDados:FD|registradorGenerico:registradorF
- 20. Port Connectivity Checks: "fluxoDados:FD|conversorHex7Seg:display5"
- 21. Port Connectivity Checks: "fluxoDados:FD|conversorHex7Seg:display4"
- 22. Port Connectivity Checks: "fluxoDados:FD|conversorHex7Seg:display3"
- 23. Port Connectivity Checks: "fluxoDados:FD|conversorHex7Seg:display2"
- 24. Port Connectivity Checks: "fluxoDados:FD|conversorHex7Seg:display1"
- 25. Port Connectivity Checks: "fluxoDados:FD|conversorHex7Seg:display0"
- 26. Port Connectivity Checks: "fluxoDados:FD"
+ 20. Port Connectivity Checks: "SMUC:SMUC1"
+ 21. Port Connectivity Checks: "fluxoDados:FD|conversorHex7Seg:display5"
+ 22. Port Connectivity Checks: "fluxoDados:FD|conversorHex7Seg:display4"
+ 23. Port Connectivity Checks: "fluxoDados:FD|conversorHex7Seg:display3"
+ 24. Port Connectivity Checks: "fluxoDados:FD|conversorHex7Seg:display2"
+ 25. Port Connectivity Checks: "fluxoDados:FD|conversorHex7Seg:display1"
+ 26. Port Connectivity Checks: "fluxoDados:FD|conversorHex7Seg:display0"
  27. Post-Synthesis Netlist Statistics for Top Partition
  28. Elapsed Time Per Partition
  29. Analysis & Synthesis Messages
@@ -61,15 +61,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 27 18:53:37 2018       ;
+; Analysis & Synthesis Status        ; Successful - Fri Oct 05 03:16:56 2018       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Relogio                                     ;
 ; Top-level Entity Name              ; Relogio                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 223                                         ;
-;     Total combinational functions  ; 197                                         ;
-;     Dedicated logic registers      ; 87                                          ;
-; Total registers                    ; 87                                          ;
+; Total logic elements               ; 230                                         ;
+;     Total combinational functions  ; 203                                         ;
+;     Dedicated logic registers      ; 84                                          ;
+; Total registers                    ; 84                                          ;
 ; Total pins                         ; 106                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -86,6 +86,8 @@ agreement for further details.
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
 ; Top-level entity name                                                      ; Relogio            ; Relogio            ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                             ; Off                ;                    ;
+; VHDL Version                                                               ; VHDL_2008          ; VHDL_1993          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -94,7 +96,6 @@ agreement for further details.
 ; Preserve fewer node names                                                  ; On                 ; On                 ;
 ; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
 ; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                   ; Auto               ; Auto               ;
 ; Safe State Machine                                                         ; Off                ; Off                ;
 ; Extract Verilog State Machines                                             ; On                 ; On                 ;
@@ -181,20 +182,21 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                       ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
-; fluxoDados.vhd                   ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/fluxoDados.vhd          ;         ;
-; ULA.vhd                          ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/ULA.vhd                 ;         ;
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/conversorHex7Seg.vhd    ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/registradorGenerico.vhd ;         ;
-; mux_relogio.vhd                  ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/mux_relogio.vhd         ;         ;
-; Relogio.vhd                      ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd             ;         ;
-; SM.vhd                           ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/SM.vhd                  ;         ;
-; edgeDetector.vhd                 ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/edgeDetector.vhd        ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                         ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
+; fluxoDados.vhd                   ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018/relogio_final/fluxoDados.vhd          ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018/relogio_final/ULA.vhd                 ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018/relogio_final/conversorHex7Seg.vhd    ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018/relogio_final/registradorGenerico.vhd ;         ;
+; mux_relogio.vhd                  ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018/relogio_final/mux_relogio.vhd         ;         ;
+; Relogio.vhd                      ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd             ;         ;
+; SM.vhd                           ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018/relogio_final/SM.vhd                  ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018/relogio_final/edgeDetector.vhd        ;         ;
+; SMUC.vhd                         ; yes             ; User VHDL File  ; C:/Users/André/Documents/GitHub/designComp2018/relogio_final/SMUC.vhd                ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -202,20 +204,20 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 223            ;
+; Estimated Total logic elements              ; 230            ;
 ;                                             ;                ;
-; Total combinational functions               ; 197            ;
+; Total combinational functions               ; 203            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 100            ;
-;     -- 3 input functions                    ; 49             ;
-;     -- <=2 input functions                  ; 48             ;
+;     -- 4 input functions                    ; 109            ;
+;     -- 3 input functions                    ; 18             ;
+;     -- <=2 input functions                  ; 76             ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 163            ;
-;     -- arithmetic mode                      ; 34             ;
+;     -- normal mode                          ; 168            ;
+;     -- arithmetic mode                      ; 35             ;
 ;                                             ;                ;
-; Total registers                             ; 87             ;
-;     -- Dedicated logic registers            ; 87             ;
+; Total registers                             ; 84             ;
+;     -- Dedicated logic registers            ; 84             ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 106            ;
@@ -223,9 +225,9 @@ agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 64             ;
-; Total fan-out                               ; 1014           ;
-; Average fan-out                             ; 2.04           ;
+; Maximum fan-out                             ; 84             ;
+; Total fan-out                               ; 1004           ;
+; Average fan-out                             ; 2.01           ;
 +---------------------------------------------+----------------+
 
 
@@ -234,20 +236,22 @@ agreement for further details.
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name         ; Library Name ;
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+---------------------+--------------+
-; |Relogio                                 ; 197 (113)           ; 87 (57)                   ; 0           ; 0            ; 0       ; 0         ; 106  ; 0            ; |Relogio                                                ; Relogio             ; work         ;
-;    |SM:maqEstados|                       ; 4 (4)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|SM:maqEstados                                  ; SM                  ; work         ;
-;    |edgeDetector:detectorSub0|           ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|edgeDetector:detectorSub0                      ; edgeDetector        ; work         ;
+; |Relogio                                 ; 203 (73)            ; 84 (33)                   ; 0           ; 0            ; 0       ; 0         ; 106  ; 0            ; |Relogio                                                ; Relogio             ; work         ;
+;    |SM:maqEstados|                       ; 3 (3)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|SM:maqEstados                                  ; SM                  ; work         ;
+;    |SMUC:SMUC1|                          ; 46 (46)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|SMUC:SMUC1                                     ; SMUC                ; work         ;
+;    |edgeDetector:detectorSub0|           ; 2 (2)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|edgeDetector:detectorSub0                      ; edgeDetector        ; work         ;
 ;    |edgeDetector:detectorSub1|           ; 2 (2)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|edgeDetector:detectorSub1                      ; edgeDetector        ; work         ;
 ;    |edgeDetector:detectorSub2|           ; 2 (2)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|edgeDetector:detectorSub2                      ; edgeDetector        ; work         ;
 ;    |edgeDetector:detectorSub3|           ; 2 (2)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|edgeDetector:detectorSub3                      ; edgeDetector        ; work         ;
+;    |edgeDetector:detectorSub4|           ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|edgeDetector:detectorSub4                      ; edgeDetector        ; work         ;
 ;    |fluxoDados:FD|                       ; 73 (0)              ; 24 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD                                  ; fluxoDados          ; work         ;
-;       |ULA:ULA|                          ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|ULA:ULA                          ; ULA                 ; work         ;
-;       |conversorHex7Seg:display0|        ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|conversorHex7Seg:display0        ; conversorHex7Seg    ; work         ;
-;       |conversorHex7Seg:display1|        ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|conversorHex7Seg:display1        ; conversorHex7Seg    ; work         ;
-;       |conversorHex7Seg:display2|        ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|conversorHex7Seg:display2        ; conversorHex7Seg    ; work         ;
-;       |conversorHex7Seg:display3|        ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|conversorHex7Seg:display3        ; conversorHex7Seg    ; work         ;
-;       |conversorHex7Seg:display4|        ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|conversorHex7Seg:display4        ; conversorHex7Seg    ; work         ;
-;       |conversorHex7Seg:display5|        ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|conversorHex7Seg:display5        ; conversorHex7Seg    ; work         ;
+;       |ULA:ULA|                          ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|ULA:ULA                          ; ULA                 ; work         ;
+;       |conversorHex7Seg:display0|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|conversorHex7Seg:display0        ; conversorHex7Seg    ; work         ;
+;       |conversorHex7Seg:display1|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|conversorHex7Seg:display1        ; conversorHex7Seg    ; work         ;
+;       |conversorHex7Seg:display2|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|conversorHex7Seg:display2        ; conversorHex7Seg    ; work         ;
+;       |conversorHex7Seg:display3|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|conversorHex7Seg:display3        ; conversorHex7Seg    ; work         ;
+;       |conversorHex7Seg:display4|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|conversorHex7Seg:display4        ; conversorHex7Seg    ; work         ;
+;       |conversorHex7Seg:display5|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|conversorHex7Seg:display5        ; conversorHex7Seg    ; work         ;
 ;       |mux_relogio:MuxRelogio|           ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|mux_relogio:MuxRelogio           ; mux_relogio         ; work         ;
 ;       |registradorGenerico:registradorA| ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|registradorGenerico:registradorA ; registradorGenerico ; work         ;
 ;       |registradorGenerico:registradorB| ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|registradorGenerico:registradorB ; registradorGenerico ; work         ;
@@ -257,6 +261,35 @@ agreement for further details.
 ;       |registradorGenerico:registradorF| ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Relogio|fluxoDados:FD|registradorGenerico:registradorF ; registradorGenerico ; work         ;
 +------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Relogio|SMUC:SMUC1|fstate                                                                                                                                                                                                                                                                    ;
++------------------+------------+------------+------------+------------+--------------+------------------+---------------+-----------+------------------+---------------+--------------+---------------+--------------+---------------+-----------+-----------+-----------+-----------+-----------+-------------+
+; Name             ; fstate.rst ; fstate.uh4 ; fstate.dh2 ; fstate.inc ; fstate.setup ; fstate.acelerado ; fstate.normal ; fstate.us ; fstate.waitState ; fstate.UhDh10 ; fstate.DmUh6 ; fstate.UmDm10 ; fstate.DsUm6 ; fstate.UsDs10 ; fstate.dh ; fstate.uh ; fstate.dm ; fstate.um ; fstate.ds ; fstate.mode ;
++------------------+------------+------------+------------+------------+--------------+------------------+---------------+-----------+------------------+---------------+--------------+---------------+--------------+---------------+-----------+-----------+-----------+-----------+-----------+-------------+
+; fstate.mode      ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 0           ;
+; fstate.ds        ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 1         ; 1           ;
+; fstate.um        ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 1         ; 0         ; 1           ;
+; fstate.dm        ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 1         ; 0         ; 0         ; 1           ;
+; fstate.uh        ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 1         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.dh        ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 1         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.UsDs10    ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 1             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.DsUm6     ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 1            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.UmDm10    ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 1             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.DmUh6     ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 1            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.UhDh10    ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 1             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.waitState ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 1                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.us        ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 1         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.normal    ; 0          ; 0          ; 0          ; 0          ; 0            ; 0                ; 1             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.acelerado ; 0          ; 0          ; 0          ; 0          ; 0            ; 1                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.setup     ; 0          ; 0          ; 0          ; 0          ; 1            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.inc       ; 0          ; 0          ; 0          ; 1          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.dh2       ; 0          ; 0          ; 1          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.uh4       ; 0          ; 1          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
+; fstate.rst       ; 1          ; 0          ; 0          ; 0          ; 0            ; 0                ; 0             ; 0         ; 0                ; 0             ; 0            ; 0             ; 0            ; 0             ; 0         ; 0         ; 0         ; 0         ; 0         ; 1           ;
++------------------+------------+------------+------------+------------+--------------+------------------+---------------+-----------+------------------+---------------+--------------+---------------+--------------+---------------+-----------+-----------+-----------+-----------+-----------+-------------+
 
 
 Encoding Type:  One-Hot
@@ -271,34 +304,14 @@ Encoding Type:  One-Hot
 +---------------+---------------+---------------+---------------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; auxFuncaoULA[1,2]                      ; Stuck at GND due to stuck port data_in ;
-; compare_clk[23,25..31]                 ; Stuck at GND due to stuck port data_in ;
-; compare_clk[11..14,16]                 ; Stuck at VCC due to stuck port data_in ;
-; compare_clk[7,9,10]                    ; Stuck at GND due to stuck port data_in ;
-; compare_clk[6]                         ; Stuck at VCC due to stuck port data_in ;
-; compare_clk[0..5]                      ; Stuck at GND due to stuck port data_in ;
-; auxUlaB[2,3]                           ; Merged with auxUlaB[1]                 ;
-; compare_clk[19..22,24]                 ; Merged with compare_clk[18]            ;
-; compare_clk[8,17]                      ; Merged with compare_clk[15]            ;
-; auxUlaB[1]                             ; Stuck at GND due to stuck port data_in ;
-; SM:maqEstados|fstate.state0            ; Lost fanout                            ;
-; Total Number of Removed Registers = 36 ;                                        ;
-+----------------------------------------+----------------------------------------+
-
-
-+--------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                          ;
-+-----------------+---------------------------+----------------------------------------+
-; Register name   ; Reason for Removal        ; Registers Removed due to This Register ;
-+-----------------+---------------------------+----------------------------------------+
-; compare_clk[31] ; Stuck at GND              ; auxUlaB[1]                             ;
-;                 ; due to stuck port data_in ;                                        ;
-+-----------------+---------------------------+----------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; SM:maqEstados|fstate.state0           ; Lost fanout        ;
+; Total Number of Removed Registers = 1 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -306,7 +319,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 87    ;
+; Total registers                              ; 84    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 24    ;
@@ -321,15 +334,8 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; auxeA                                  ; 4       ;
-; auxeB                                  ; 4       ;
-; auxeC                                  ; 4       ;
-; auxeD                                  ; 4       ;
-; auxeE                                  ; 4       ;
-; auxeF                                  ; 4       ;
-; compare_clk[18]                        ; 1       ;
 ; count[0]                               ; 2       ;
-; Total number of inverted registers = 8 ;         ;
+; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
 
@@ -338,7 +344,9 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |Relogio|fluxoDados:FD|mux_relogio:MuxRelogio|Mux2 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Relogio|fluxoDados:FD|ULA:ULA|Mux0                ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |Relogio|fluxoDados:FD|mux_relogio:MuxRelogio|Mux3 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Relogio|SMUC:SMUC1|reg_fstate                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 
 
@@ -400,6 +408,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; larguradados   ; 3     ; Signed Integer                                                     ;
 +----------------+-------+--------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------+
+; Port Connectivity Checks: "SMUC:SMUC1"  ;
++-------+-------+----------+--------------+
+; Port  ; Type  ; Severity ; Details      ;
++-------+-------+----------+--------------+
+; reset ; Input ; Info     ; Stuck at GND ;
+; ft    ; Input ; Info     ; Stuck at VCC ;
++-------+-------+----------+--------------+
 
 
 +---------------------------------------------------------------------+
@@ -468,38 +486,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+---------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "fluxoDados:FD"                                                                           ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; resultado ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; saidamux  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 106                         ;
-; cycloneiii_ff         ; 87                          ;
+; cycloneiii_ff         ; 84                          ;
 ;     ENA CLR           ; 24                          ;
-;     plain             ; 63                          ;
-; cycloneiii_lcell_comb ; 203                         ;
-;     arith             ; 34                          ;
+;     plain             ; 60                          ;
+; cycloneiii_lcell_comb ; 209                         ;
+;     arith             ; 35                          ;
 ;         2 data inputs ; 33                          ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 169                         ;
+;         3 data inputs ; 2                           ;
+;     normal            ; 174                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 10                          ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 48                          ;
-;         4 data inputs ; 100                         ;
+;         2 data inputs ; 37                          ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 109                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.84                        ;
+; Max LUT depth         ; 9.30                        ;
+; Average LUT depth     ; 4.11                        ;
 +-----------------------+-----------------------------+
 
 
@@ -518,110 +526,116 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Sep 27 18:53:18 2018
+    Info: Processing started: Fri Oct 05 03:16:37 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Relogio -c Relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file fluxodados.vhd
-    Info (12022): Found design unit 1: fluxoDados-simples File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/fluxoDados.vhd Line: 32
-    Info (12023): Found entity 1: fluxoDados File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/fluxoDados.vhd Line: 6
+    Info (12022): Found design unit 1: fluxoDados-simples File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/fluxoDados.vhd Line: 30
+    Info (12023): Found entity 1: fluxoDados File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/fluxoDados.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
-    Info (12022): Found design unit 1: ULA-comportamento File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/ULA.vhd Line: 13
-    Info (12023): Found entity 1: ULA File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/ULA.vhd Line: 5
+    Info (12022): Found design unit 1: ULA-comportamento File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/ULA.vhd Line: 15
+    Info (12023): Found entity 1: ULA File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/ULA.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/conversorHex7Seg.vhd Line: 17
-    Info (12023): Found entity 1: conversorHex7Seg File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/conversorHex7Seg.vhd Line: 4
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/conversorHex7Seg.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/registradorGenerico.vhd Line: 14
-    Info (12023): Found entity 1: registradorGenerico File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/registradorGenerico.vhd Line: 4
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/registradorGenerico.vhd Line: 14
+    Info (12023): Found entity 1: registradorGenerico File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/registradorGenerico.vhd Line: 4
 Info (12021): Found 3 design units, including 1 entities, in source file divisorgenerico.vhd
-    Info (12022): Found design unit 1: divisorGenerico-divisaoPor2 File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/divisorGenerico.vhd Line: 14
-    Info (12022): Found design unit 2: divisorGenerico-divisaoGenerica File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/divisorGenerico.vhd Line: 27
-    Info (12023): Found entity 1: divisorGenerico File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/divisorGenerico.vhd Line: 5
+    Info (12022): Found design unit 1: divisorGenerico-divisaoPor2 File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/divisorGenerico.vhd Line: 14
+    Info (12022): Found design unit 2: divisorGenerico-divisaoGenerica File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/divisorGenerico.vhd Line: 27
+    Info (12023): Found entity 1: divisorGenerico File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/divisorGenerico.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file mux_relogio.vhd
-    Info (12022): Found design unit 1: mux_relogio-Behavioral File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/mux_relogio.vhd Line: 17
-    Info (12023): Found entity 1: mux_relogio File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/mux_relogio.vhd Line: 4
+    Info (12022): Found design unit 1: mux_relogio-Behavioral File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/mux_relogio.vhd Line: 17
+    Info (12023): Found entity 1: mux_relogio File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/mux_relogio.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file relogio.vhd
-    Info (12022): Found design unit 1: Relogio-comportamento File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 23
-    Info (12023): Found entity 1: Relogio File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 6
+    Info (12022): Found design unit 1: Relogio-comportamento File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 24
+    Info (12023): Found entity 1: Relogio File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file sm.vhd
-    Info (12022): Found design unit 1: SM-BEHAVIOR File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/SM.vhd Line: 33
-    Info (12023): Found entity 1: SM File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/SM.vhd Line: 22
+    Info (12022): Found design unit 1: SM-BEHAVIOR File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/SM.vhd Line: 32
+    Info (12023): Found entity 1: SM File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/SM.vhd Line: 21
 Info (12021): Found 3 design units, including 1 entities, in source file edgedetector.vhd
-    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/edgeDetector.vhd Line: 10
-    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/edgeDetector.vhd Line: 23
-    Info (12023): Found entity 1: edgeDetector File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/edgeDetector.vhd Line: 4
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/edgeDetector.vhd Line: 10
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/edgeDetector.vhd Line: 23
+    Info (12023): Found entity 1: edgeDetector File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/edgeDetector.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file smuc.vhd
+    Info (12022): Found design unit 1: SMUC-BEHAVIOR File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/SMUC.vhd Line: 43
+    Info (12023): Found entity 1: SMUC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/SMUC.vhd Line: 22
 Info (12127): Elaborating entity "Relogio" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Relogio.vhd(62): object "auxSaida" assigned a value but never read File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 62
-Warning (10036): Verilog HDL or VHDL warning at Relogio.vhd(67): object "auxsaidaMUX" assigned a value but never read File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 67
-Warning (10036): Verilog HDL or VHDL warning at Relogio.vhd(80): object "blink" assigned a value but never read File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 80
-Info (12128): Elaborating entity "SM" for hierarchy "SM:maqEstados" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 86
-Info (12128): Elaborating entity "fluxoDados" for hierarchy "fluxoDados:FD" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 93
-Info (12128): Elaborating entity "mux_relogio" for hierarchy "fluxoDados:FD|mux_relogio:MuxRelogio" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/fluxoDados.vhd Line: 39
-Info (12128): Elaborating entity "ULA" for hierarchy "fluxoDados:FD|ULA:ULA" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/fluxoDados.vhd Line: 41
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "fluxoDados:FD|registradorGenerico:registradorA" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/fluxoDados.vhd Line: 43
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "fluxoDados:FD|conversorHex7Seg:display0" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/fluxoDados.vhd Line: 62
-Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub0" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 127
+Warning (10540): VHDL Signal Declaration warning at Relogio.vhd(14): used explicit default value for signal "LEDR" because signal was never assigned a value File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+Info (12128): Elaborating entity "SM" for hierarchy "SM:maqEstados" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 85
+Info (12128): Elaborating entity "fluxoDados" for hierarchy "fluxoDados:FD" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 92
+Info (12128): Elaborating entity "mux_relogio" for hierarchy "fluxoDados:FD|mux_relogio:MuxRelogio" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/fluxoDados.vhd Line: 38
+Info (12128): Elaborating entity "ULA" for hierarchy "fluxoDados:FD|ULA:ULA" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/fluxoDados.vhd Line: 40
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "fluxoDados:FD|registradorGenerico:registradorA" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/fluxoDados.vhd Line: 42
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "fluxoDados:FD|conversorHex7Seg:display0" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/fluxoDados.vhd Line: 52
+Info (12128): Elaborating entity "SMUC" for hierarchy "SMUC:SMUC1" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 120
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub0" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 140
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 13
-    Warning (13410): Pin "LEDG[4]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 14
-    Warning (13410): Pin "LEDG[5]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 14
-    Warning (13410): Pin "LEDG[6]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 14
-    Warning (13410): Pin "LEDG[7]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 14
-    Warning (13410): Pin "LEDG[8]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 14
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
-    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
-    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
-    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
-    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 15
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 14
+    Warning (13410): Pin "LEDG[4]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 15
+    Warning (13410): Pin "LEDG[5]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 15
+    Warning (13410): Pin "LEDG[6]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 15
+    Warning (13410): Pin "LEDG[7]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 15
+    Warning (13410): Pin "LEDG[8]" is stuck at GND File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 15
+    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
+    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
+    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 16
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 14 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[10]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[11]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[12]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-    Warning (15610): No output dependent on input pin "SW[15]" File: C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/Relogio.vhd Line: 17
-Info (21057): Implemented 335 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[10]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[11]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[12]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "SW[15]" File: C:/Users/André/Documents/GitHub/designComp2018/relogio_final/Relogio.vhd Line: 18
+Info (21057): Implemented 340 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 83 output pins
-    Info (21061): Implemented 229 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
+    Info (21061): Implemented 234 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 55 warnings
     Info: Peak virtual memory: 4815 megabytes
-    Info: Processing ended: Thu Sep 27 18:53:37 2018
+    Info: Processing ended: Fri Oct 05 03:16:56 2018
     Info: Elapsed time: 00:00:19
     Info: Total CPU time (on all processors): 00:00:42
 

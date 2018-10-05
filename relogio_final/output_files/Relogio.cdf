@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/André/Documents/GitHub/designComp2018-master/relogio_final/output_files/") File("Relogio.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/André/Documents/GitHub/designComp2018/relogio_final/output_files/") File("Relogio.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -4,22 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "LEDR[13]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[14]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[16]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[17]",
-					"strict" : false
-				},
-				{
 					"name" : "LEDG[0]",
 					"strict" : false
 				},
@@ -224,7 +208,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[16]",
+					"name" : "SW[13]",
 					"strict" : false
 				},
 				{
@@ -232,11 +216,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[13]",
+					"name" : "SW[14]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[14]",
+					"name" : "SW[16]",
 					"strict" : false
 				}
 			]
